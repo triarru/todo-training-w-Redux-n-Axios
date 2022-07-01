@@ -20,7 +20,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            React
+            TodoList
           </a>
           <span>, </span>
           <a
