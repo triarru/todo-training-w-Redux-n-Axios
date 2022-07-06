@@ -1,0 +1,26 @@
+.todos {
+  display: flex;
+  color: palevioletred;
+  font-weight: 400;
+  font-size: 40px;
+  padding: 0 20px;
+  font-family: "Kanit", sans-serif;
+}
+
+.addBtn {
+  cursor: pointer;
+}
+
+.addBtn:hover {
+  color: palevioletred;
+}
+
+.add {
+  width: 100%;
+  text-align: right;
+}
+
+hr {
+  margin: 0;
+}
+

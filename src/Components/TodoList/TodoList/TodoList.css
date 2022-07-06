@@ -1,0 +1,38 @@
+.todoList{
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+    margin-right: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+.noTodo{
+    text-align: center;
+    line-height: 90px; 
+    font-size: 20px;
+    font-family: 'Kanit', sans-serif;
+    opacity: 0.5;
+}
+
