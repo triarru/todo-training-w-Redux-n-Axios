@@ -1,0 +1,37 @@
+.Footer {
+    max-width: 595px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/* .Total {
+    font-weight: 350;
+} */
+
+.Filter button {
+    border: none;
+    background-color: #F0F8FF;
+    font-size: 15px;
+    padding: 0 10px;
+    height: 25px;
+}
+
+.Filter button:hover {
+    cursor: pointer;
+}
+
+.Filter button:focus {
+    cursor: pointer;
+    border: 1px solid #191970;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+.deleteAll:hover {
+    cursor: pointer;
+}

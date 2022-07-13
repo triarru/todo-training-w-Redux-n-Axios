@@ -1,8 +1,8 @@
-import { combineReducers } from "redux"; // lay tat ca reduxer
-import todoReducrer from './todoReducrer.js'
+import { combineReducers } from "redux";
+import TodoReducres from "./TodoReducres";
 
-const rootReducer = combineReducers({
-    myTodos : todoReducrer
+const rootReducres = combineReducers({
+    Mytodos : TodoReducres
 })
 
-export default rootReducer
+export default rootReducres

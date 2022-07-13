@@ -1,0 +1,25 @@
+.Input {
+    max-width: 600px;
+    margin: auto;
+    padding-bottom: 15px;
+}
+
+.Input input {
+    width: 595px;
+    font-size: 24px;
+    border: 1px solid #1E90FF;
+    border-radius: 5px;
+    height: 80px;
+}
+
+.Input input:focus {
+    outline: none !important;
+    border-color: #1E90FF;
+    box-shadow: 0 0 9px 0 #1E90FF;
+}
+
+.Input input::placeholder {
+    opacity: 0.2;
+    color: #9966FF;
+    font-style: italic;;
+}
