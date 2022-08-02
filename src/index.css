@@ -5,11 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: linear-gradient(purple, pink); */
-  /* background-color: #F0FFFF; */
-  /* background-image: linear-gradient(45deg,#87CEFA ,#6495ED); */
-  background-image: url('./img/background.jpg');
-
+  background: linear-gradient(180deg,#c06c84,#6c5b7b,#355c7d) no-repeat;
+  /* box-sizing: border-box; */
+  height: 690px;
 }
 
 code {

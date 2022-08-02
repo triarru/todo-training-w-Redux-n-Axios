@@ -1,0 +1,11 @@
+.Todolist_content {
+    overflow: auto;
+    height: 425px;
+    padding: 24px;
+}
+
+.Todolist_content::-webkit-scrollbar {
+    width: 0px;
+    /* background-color: #fff; */
+}
+

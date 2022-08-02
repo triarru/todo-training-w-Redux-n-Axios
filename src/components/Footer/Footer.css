@@ -1,37 +1,40 @@
-.Footer {
-    max-width: 595px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.Footer_content {
+    /* position: absolute;
+    bottom: 14%; */
 }
 
-/* .Total {
-    font-weight: 350;
+.Nav_footer {
+    border-top: 1px solid;
+    margin-bottom: 10px;
+}
+
+/* .Footer_content hr {
+    background-color: #000;
+    font-weight: 100;
+    width: 595px;
 } */
 
-.Filter button {
+.Footer_content button {
+    margin-top: 10px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    /* border: 1px solid; */
+    font-size: 16px;
+    /* background-color: #BBBBBB; */
     border: none;
-    background-color: #F0F8FF;
-    font-size: 15px;
-    padding: 0 10px;
-    height: 25px;
-}
-
-.Filter button:hover {
-    cursor: pointer;
-}
-
-.Filter button:focus {
-    cursor: pointer;
-    border: 1px solid #191970;
-    border-radius: 5px;
     background-color: #fff;
 }
 
-
-.deleteAll:hover {
+.btn:hover {
     cursor: pointer;
+}
+
+.click_btn {
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 1px 1px ;
+}
+
+.btn {
+    margin: 0 4px;
 }

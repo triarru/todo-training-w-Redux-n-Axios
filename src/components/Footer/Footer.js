@@ -1,30 +1,56 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React, { useState } from 'react'
 import './Footer.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { filter } from '../../redux/actions';
+// import { filtertodo } from '../../redux/actions';
 
-const Footer = ({newTodos}) => {
+const Footer = (props) => {
+  const {setFilterState} = props;
+  const dispatch = useDispatch();
+
+  // const filterTodo = useSelector((state) => state.filter);
+
+  const [status,setStatus] = useState('All')
+
+  // const status = status
+
+  // const filtered = useSelector((state) => state.filter)
+
+  const todoListFilter = useSelector((state) => state.todoListFilter);
+
+  const clickAll = () => {
+    setFilterState('All')
+    setStatus('All')
+    
+  }
+
+  const clickActive = () => {
+    // setStatus('Active')
+    setFilterState('Active')
+    // dispatch(filter('All'))
+    setStatus('Active')
+  }
+
+  const clickCompleted = () => {
+    // setStatus('Completed')
+    setFilterState('Completed')
+    setStatus('Completed')
+    
+  }
+  // const [status, setStatus] = useState('All')
+
   return (
     <div className='Footer'>
-        <div className='Total'>{`${newTodos.length} item`}</div>
-        <div className='Filter'>
-            <button>All</button>
-            <button>Active</button>
-            <button>Completed</button>
+        <div className='Footer_content'>
+            <div className='Nav_footer'   >
+                <button className={status === 'All' ? 'click_btn' : 'btn'} filtered='All'  onClick={clickAll} > All ({todoListFilter.length})</button>
+                <button className={status === 'Active' ? 'click_btn' : 'btn'} filtered='Active' onClick={clickActive}>  Active ({todoListFilter.filter(todo => !todo.complete).length}) </button>
+                <button className={status === 'Completed' ? 'click_btn' : 'btn'} filtered='Completed' onClick={clickCompleted} > Completed ({todoListFilter.filter(todo => todo.complete).length}) </button>
+                {/* <button className='Clear_completed'> Clear completed</button> */}
+            </div>
         </div>
-        <div className='deleteAll'>Clear All</div>
     </div>
   )
 }
 
-Footer.propTypes = {
-    newTodos: PropTypes.any.isRequired
-}
-
-const mapStateToProps = state => ({
-    newTodos: state.Mytodos.todos
-})
-
-
-
-export default connect(mapStateToProps, {}) (Footer)
+export default Footer
