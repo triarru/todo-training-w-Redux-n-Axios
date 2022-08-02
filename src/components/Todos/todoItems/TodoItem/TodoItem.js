@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import moment from "moment";
-
 import "./TodoItem.css";
 import edit from "../../../../img/edit.png";
 import deleted from "../../../../img/delete.png";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import DeleteItem from "../DeleteItem/DeleteItem";
 import EditItem from "../EditItem/EditItem";
-import { check } from "../../../../redux/actions";
+// import { check } from "../../../../redux/actions";
 import checked from '../../../../img/check.png'
 import unchecked from '../../../../img/uncheck.png'
-import { checkTodoThunk } from "../../../../redux/thunk";
+import { checkTodoThunk, getTodoThunk } from "../../../../redux/thunk";
+import { toast } from "react-toastify";
+
+// import TodoList from "../TodoList/TodoList";
 
 const TodoItem = ({ TodoItem }) => {
   
@@ -21,6 +23,28 @@ const TodoItem = ({ TodoItem }) => {
   const [openDelete, setOpenDelete] = useState(false);
 
   const [openEdit, setOpenEdit] = useState(false);
+
+  const [deadLine, setDeadLine] = useState('far')
+
+  useEffect(() => {
+  const d = new Date()
+  const time = new Date(TodoItem.deadLine)
+  const a = time.getTime() - d.getTime()
+  // console.log(TodoItem.title + ":" + (a/(1000)))
+  if( a < 0) {
+    setDeadLine('late')
+    // toast.error('erroe')
+    // console.log(TodoItem.title + ":" +deadLine)
+  }else if( a < 1000 * 60 * 60 && a > 0){
+    setDeadLine('near')
+    // toast.warning('warning ' + '  ' + TodoItem.title)
+    // console.log(TodoItem.title + ":" +'near')
+  }else {
+    setDeadLine('far')
+    // console.log(TodoItem.title + ":" +'far')
+  }
+  // dispatch(getTodoThunk())
+  },[])
 
   const clickOpenDelete = () => {
     setOpenDelete(true);
@@ -33,7 +57,6 @@ const TodoItem = ({ TodoItem }) => {
 
   const clickCheck = () => {
     dispatch(checkTodoThunk(TodoItem));
-
   };
 
   // console.log(TodoItem);
@@ -49,7 +72,13 @@ const TodoItem = ({ TodoItem }) => {
             {/* <input type="checkbox" onClick={clickCheck} className = 'checkCompleted' /> */}
             <div className="todo_and_time">
             <p className={TodoItem.complete === true ? "completed" : "unCompleted"}> {TodoItem.title}</p>
-            <p className={ moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time"}> {moment(TodoItem.deadLine).format('LLLL')}</p>
+            {deadLine === 'late'?
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_timelate"}>{moment(TodoItem.deadLine).format('LLLL')}</p>
+            :deadLine === 'near'?
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time_near"}>{moment(TodoItem.deadLine).format('LLLL')}</p>
+            :
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time_far"}>{moment(TodoItem.deadLine).format('LLLL')}</p>  
+            }
 
             </div>
           </div>
@@ -75,7 +104,13 @@ const TodoItem = ({ TodoItem }) => {
             {/* <input type="checkbox" onClick={clickCheck} className = 'checkCompleted' /> */}
             <div className="todo_and_time">
             <p className={TodoItem.complete === true ? "completed" : "unCompleted"}> {TodoItem.title}</p>
-            <p className={ moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time"}> {moment(TodoItem.deadLine).format('LLLL')}</p>
+            {deadLine === 'late'?
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_timelate"}>{moment(TodoItem.deadLine).format('LLLL')}</p>
+            :deadLine === 'near'?
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time_near"}>{moment(TodoItem.deadLine).format('LLLL')}</p>
+            :
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time_far"}>{moment(TodoItem.deadLine).format('LLLL')}</p>  
+            }
            
             </div>
           </div>
@@ -95,10 +130,16 @@ const TodoItem = ({ TodoItem }) => {
         <div  className={TodoItem.complete === true ?'Todo_complete' :"List_todo"}>
           <div className="Nav_list_todo">
             <img className="img_check"  src={TodoItem.complete === true ? checked : unchecked} alt="" onClick={clickCheck}/>
-            {/* <input type="checkbox" onClick={clickCheck} className = 'checkCompleted' /> */}
+            {/* <input type="checkbox" onClick={clickCheck} className = 'checkCompleted' color="black"/> */}
             <div className="todo_and_time">
             <p className={TodoItem.complete === true ? "completed" : "unCompleted"}> {TodoItem.title}</p>
-            <p className={ moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time"}> {moment(TodoItem.deadLine).format('LLLL')}</p>
+            {deadLine === 'late'?
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time_late"}>{moment(TodoItem.deadLine).format('LLLL')}</p>
+            :deadLine === 'near'?
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time_near"}>{moment(TodoItem.deadLine).format('LLLL')}</p>
+            :
+            <p className={moment(TodoItem.deadLine).format('LLLL') === 'Invalid date'?"no_time":"unCompleted_time"}>{moment(TodoItem.deadLine).format('LLLL')}</p>  
+            }
             </div>
           </div>
           <div>

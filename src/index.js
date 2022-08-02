@@ -6,7 +6,7 @@ import store from './redux/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-import userEvent from '@testing-library/user-event'
+// import userEvent from '@testing-library/user-event'
 
 
 // chuyển phần tử DOM cho createRoot 

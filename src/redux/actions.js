@@ -55,9 +55,7 @@ export const getTodo = (data) => (dispatch) => {
     for(let todo of todos) {
         listTodo.unshift(todo)
     }
-    // listTodo.reverse();
   dispatch(setTodo(listTodo));
-
 }
 
 

@@ -16,7 +16,9 @@ const Footer = (props) => {
 
   // const filtered = useSelector((state) => state.filter)
 
-  const todoListFilter = useSelector((state) => state.todoListFilter);
+  const todoListFilter = useSelector(e => e.todoList)
+
+  // const todoListFilter = useSelector((state) => state.todoListFilter);
 
   const clickAll = () => {
     setFilterState('All')

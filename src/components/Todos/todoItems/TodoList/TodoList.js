@@ -1,9 +1,8 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import React, { useEffect } from 'react'
 import TodoItem from "../TodoItem/TodoItem";
 import './TodoList.css'
 import { useDispatch } from "react-redux";
-
 import { getTodoThunk } from "../../../../redux/thunk";
 
 const TodoList = (props) => {
@@ -13,7 +12,7 @@ const TodoList = (props) => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => { dispatch(getTodoThunk(todosClone))},[getTodoThunk])
+  useEffect(() => { dispatch(getTodoThunk(todosClone))},[])
 
   // console.log(todosClone)
   // console.log(filterState)

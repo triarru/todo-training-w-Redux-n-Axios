@@ -8,13 +8,15 @@
     align-items: center;
     /* background-color: #ddd; */
     border-radius: 8px;
-    margin-bottom: 16px;
+    margin: 16px;
+    /* margin: 10px; */
     padding: 8px;
     /* height: 60px; */
     position: relative;
     /* overflow: scroll; */
     border: 1px solid #ccc;
     min-height: 73px;
+    background-color: #fff;
 }
 
 .options {
@@ -69,7 +71,7 @@
     opacity: 0.3;
     margin: 0;
     padding: 5px;
-    margin: 0 5px;
+    margin:  5px;
     font-size: 20px;
     font-weight: 600;
     width: 360px; 
@@ -81,7 +83,7 @@
     font-weight: 600;
     margin: 0;
     padding: 5px;
-    margin: 0 5px;
+    margin:  5px;
     width: 360px; 
     word-wrap: break-word;
 }
@@ -100,13 +102,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: #ddd; */
     border-radius: 8px;
-    margin-bottom: 16px;
+    margin: 16px;
     padding: 8px;
-    /* height: 60px; */
     position: relative;
-    /* overflow: scroll; */
     border: 1px solid #ccc;
     min-height: 73px;
 }
@@ -137,17 +136,23 @@
     display: none;
 }
 
-/* .edit,
-.delete {
-    display: none;
+
+.unCompleted_time_late {
+    color: red;
+    font-weight: 600;
+    margin: 0;
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 20px;
+
 }
 
-.Todo_complete:hover .edit,
-.Todo_complete:hover .delete {
-    display: inline;
-}
+.unCompleted_time_near {
+    color: orange; 
+    font-weight: 600;
+    margin: 0;
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 20px;
 
-.List_todo:hover .edit,
-.List_todo:hover .delete {
-    display: inline;
-} */
+}

@@ -32,7 +32,7 @@
 }
 
 .btn_save {
-    background-color: #00DD00;
+    background-color: #c06c84;
     border: 1px solid #006600;
     height: 50px;
     font-size: 20px;
@@ -49,4 +49,14 @@
     font-size: 20px;
     padding: 0 44px;
     margin: 0 8px;
+}
+
+.btn_save:hover {
+    cursor: pointer;
+    background-color: #d08b9e;
+}
+
+.btn_cancel:hover {
+    cursor: pointer;
+    background-color: #ddd;
 }

@@ -7,6 +7,9 @@ import TodoList from "./components/Todos/todoItems/TodoList/TodoList";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// import { toast } from "react-toastify";
+
+
 
 function App() {
   const todos = useSelector((state) => state.todoList);

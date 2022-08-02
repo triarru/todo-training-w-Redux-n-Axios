@@ -19,120 +19,61 @@ import {
 
 const initState = {
     todoList: [],
-    filter: 'All',
-    todoListFilter: [],
-    // success:''
 }
 
-const addtodo = (todoList, todo) => {
-    // console.log(todoList)
-    console.log([todo,...todoList])
-    return[todo,...todoList]
-
-}
-
-const checkTodo = (todoList,id) => 
-    // console.log(todoList)
-    todoList.map(todo => {
-        if(todo.id === id) {
-            // console.log(todo)
-            return{
-                ...todo,
-                complete :!todo.complete
-            }
-            // console.log(todoList)
-        }else{
-            return todo
-        }
-    })
-
-const deleteTodo = (todoList, id) => {
-    return todoList.filter(e => e.id !== id)
-}
-
-const editTodo = (todoList, todo) => 
-    // console.log(todo)
-    todoList.map(e => {
-        if(e.id === todo.id) {
-            return todo
-        }else {
-            return e
-        }
-    })
-
-    
-
-const setFilter = (todoList, filter) => {
-    // const newList = [...todoList];
-    // console.log(todoList)
-    if (filter === "All") {
-        // console.log(newList)    
-        return todoList;
-    } else if (filter === "Active") {
-        // console.log(newList)    
-       const listActive =  todoList.filter((todo) => todo.complete === false);
-        console.log(listActive)
-        return listActive
-        // console.log(todoList)
-        
-    } else if (filter === "Completed"){
-        // console.log(newList)    
-        console.log(todoList.filter((todo) => todo.complete === true));
-        return todoList.filter((todo) => todo.complete === true)
-    }
-    console.log(todoList)
-};
+// const setFilter = (todoList, filter) => {
+//     if (filter === "All") { 
+//         return todoList;
+//     } else if (filter === "Active") {   
+//        const listActive =  todoList.filter((todo) => todo.complete === false);
+//         console.log(listActive)
+//         return listActive
+//     } else if (filter === "Completed"){  
+//         console.log(todoList.filter((todo) => todo.complete === true));
+//         return todoList.filter((todo) => todo.complete === true)
+//     }
+//     console.log(todoList)
+// };
 
 
 
 const rootReducer = (state = initState, action) => {
     switch (action.type) {
         case ADD_TODO :
-            console.log(action.payload)
-            return{
-                ...state,
-                todoList : addtodo(state.todoList, action.payload),
-                todoListFilter: addtodo(state.todoList, action.payload)
-            }
-            
+            // console.log(action.payload)
+            return {
+                ...state.todoList,
+                todoList: action.payload
+            }     
         case TOGGLE_TODO :
-            return{
-                ...state,
-                todoList: checkTodo(state.todoList, action.payload),
-                todoListFilter: checkTodo(state.todoList, action.payload)
+            return {
+                ...state.todoList,
+                todoList: state.todoList.map(e => {
+                    if(e.id === action.payload) {
+                        return {
+                            ...e,
+                            complete: !e.complete
+                        }
+                    }else {
+                        return e
+                    }
+                })
             }
-        
         case DELETE_TODO:
             return {
                 ...state,
-                todoList: deleteTodo(state.todoList, action.payload),
-                todoListFilter: deleteTodo(state.todoList, action.payload)
+                todoList: state.todoList.filter(e => e.id !== e.payload)
             }
             
         case UPDATE_TODO :
             return {
                 ...state,
-                todoList: editTodo(state.todoList, action.payload),
-                todoListFilter: editTodo(state.todoList, action.payload)
-            }
-        
-        case SET_FILTER :
-            return {
-                ...state,
-                filter : action.payload,
-                todoList: setFilter(state.todoListFilter, action.payload)
+                todoList: state.todoList.map(e => action.payload)    
             }
         case SET_TODOS :
             return {
                 ...state,
                 todoList: action.payload,
-                todoListFilter: action.payload
-            }
-
-        case GET_TODOS:
-            return {
-                ...state,
-                todoList: action.payload
             }
         default:
             return state    

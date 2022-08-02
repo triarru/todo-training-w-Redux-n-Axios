@@ -19,7 +19,7 @@ export const getTodoThunk = () => async (dispatch) => {
     dispatch(action.getTodo(response.data));
     toast.success('get success')
   } catch (error) {
-    toast.error(error);
+    toast.error('get data fail')
   }
 };
 
@@ -30,7 +30,7 @@ export const addTodoThunk = (todo) => async (dispatch) => {
     dispatch(action.getTodo(response.data));
     toast.success('add success')
   } catch (error) {
-    console.log(error);
+    toast.error('add data fail')
   }
 };
 
@@ -41,7 +41,7 @@ export const editTodoThunk = (todo) => async (dispatch) => {
     dispatch(action.getTodo(response.data));
     toast.success('edit success')
   } catch (error) {
-    console.log(error);
+    toast.error('edit data fail')
   }
 };
 
@@ -53,7 +53,7 @@ export const deleteTodoThunk = (id) => async (dispatch) => {
     // dispatch(action.getTodo())
     toast.success('delete success')
   } catch (error) {
-    console.log(error);
+    toast.error('delete data fail')
   }
 };
 
@@ -67,3 +67,6 @@ export const checkTodoThunk = (todo) => async (dispatch) => {
     console.log(error);
   }
 };
+
+
+
