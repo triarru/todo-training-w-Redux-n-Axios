@@ -8,30 +8,30 @@ export const instance = axios.create({
     headers: { "X-Custom-Header": "foobar" },   
   });
 
-export const apiGetTodo = () => {
-    return instance.get(`/todos`)
-}
+// export const apiGetTodo = () => {
+//     return instance.get(`/todos`)
+// }
 
-export const apiAddTodo = (todo) => {
-    return instance.post(`/todos`, todo)
-}
+// export const apiAddTodo = (todo) => {
+//     return instance.post(`/todos`, todo)
+// }
 
-export const apiDeleteTodo = (id) => {
-    return instance.delete(`/todos/${id}`)
-}
+// export const apiDeleteTodo = (id) => {
+//     return instance.delete(`/todos/${id}`)
+// }
 
 
-export const apiEditTodo = (todo) => {
-    return instance.put(`/todos/${todo.id}` ,{
-        title: todo.title,
-        complete: todo.complete,
-        deadLine: todo.deadLine
-    })
-}
+// export const apiEditTodo = (todo) => {
+//     return instance.put(`/todos/${todo.id}` ,{
+//         title: todo.title,
+//         complete: todo.complete,
+//         deadLine: todo.deadLine
+//     })
+// }
 
-export const apiCheckTodo = (todo) => {
-    return instance.put(`/todos/${todo.id}` ,{
-        complete: !todo.complete,
-        deadLine: todo.deadLine
-    })
-}
+// export const apiCheckTodo = (todo) => {
+//     return instance.put(`/todos/${todo.id}` ,{
+//         complete: !todo.complete,
+//         deadLine: todo.deadLine
+//     })
+// }

@@ -1,24 +1,12 @@
-import React, { useState } from 'react'
-import './Footer.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { filter } from '../../redux/actions';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import './Footer.css';
 // import { filtertodo } from '../../redux/actions';
 
 const Footer = (props) => {
   const {setFilterState} = props;
-  const dispatch = useDispatch();
-
-  // const filterTodo = useSelector((state) => state.filter);
-
   const [status,setStatus] = useState('All')
-
-  // const status = status
-
-  // const filtered = useSelector((state) => state.filter)
-
-  const todoListFilter = useSelector(e => e.todoList)
-
-  // const todoListFilter = useSelector((state) => state.todoListFilter);
+  const todoListFilter = useSelector(e => e.todos)
 
   const clickAll = () => {
     setFilterState('All')
@@ -27,19 +15,15 @@ const Footer = (props) => {
   }
 
   const clickActive = () => {
-    // setStatus('Active')
     setFilterState('Active')
-    // dispatch(filter('All'))
     setStatus('Active')
   }
 
   const clickCompleted = () => {
-    // setStatus('Completed')
     setFilterState('Completed')
     setStatus('Completed')
     
   }
-  // const [status, setStatus] = useState('All')
 
   return (
     <div className='Footer'>

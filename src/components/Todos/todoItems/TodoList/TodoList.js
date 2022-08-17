@@ -1,21 +1,17 @@
 // import { useSelector } from "react-redux";
-import React, { useEffect } from 'react'
+import React from 'react';
 import TodoItem from "../TodoItem/TodoItem";
-import './TodoList.css'
-import { useDispatch } from "react-redux";
-import { getTodoThunk } from "../../../../redux/thunk";
+import './TodoList.css';
 
 const TodoList = (props) => {
   const {todos, filterState} = props
-  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const todosClone = [...todos];
+  console.log(todosClone)
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => { dispatch(getTodoThunk(todosClone))},[])
-
-  // console.log(todosClone)
-  // console.log(filterState)
+  // useEffect(() => { dispatch(getTodoThunk())},[])
 
   return (
     <div className="Todolist_content">
@@ -24,8 +20,7 @@ const TodoList = (props) => {
         (
           todosClone.filter(e => filterState === 'Completed' ? e.complete === true : filterState === 'Active' ? e.complete === false : e.complete === false || e.complete === true).map((todo, index) => <TodoItem key={index} TodoItem = {todo} />)
             // todoLists.map(item => <TodoItem TodoItem = {item} />)
-
-        )
+        ).reverse()
     }
     </div>
   )

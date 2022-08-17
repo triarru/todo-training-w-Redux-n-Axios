@@ -1,7 +1,6 @@
-import moment from "moment";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodoThunk } from "../../../redux/thunk";
+import { addTodoThunk,getTodoThunk } from "../../../redux/todoSlice";
 import "./TodoInputs.css";
 // import v4 as uuidv4 from './'
 // import calendar from '../../../img/calendar.png'
@@ -12,13 +11,14 @@ const TodoInputs = ({ close }) => {
   const [text, setText] = useState(false)
   const [text_error, setText_error] = useState(false)
 
-  const todoList = useSelector(e => e.todoList)
+  const todoList = useSelector(e => e.todos)
 
   // console.log(todoList)
 
 
   const dispatch = useDispatch();
 
+  
   const changeValue = (e) => {
     setValue(e.target.value);
     // console.log(e.target.value)
@@ -26,14 +26,14 @@ const TodoInputs = ({ close }) => {
       setValue(e.target.value);
     }
   };
-
+  
   const changeTime = (e) => {
     if(e.target.value !== '') {
-    setTime(e.target.value)
-    console.log(e.target.value)
+      setTime(e.target.value)
+      // console.log(e.target.value)
     }
   }
-
+  
   const handleAdd = () => {
     if(value !== '' && value.trim() !== '' &&  todoList.every(todo => todo.title !== value) ) {
       dispatch(
@@ -42,10 +42,10 @@ const TodoInputs = ({ close }) => {
           deadLine:time,
           complete: false
         })
-      );
-      close(false)
-    }else if(value !== '' && value.trim() !== ''){
-      setText(false)
+        );
+        close(false)
+      }else if(value !== '' && value.trim() !== ''){
+        setText(false)
       setText_error(true)
     }else{
       setText_error(false)

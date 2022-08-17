@@ -6,7 +6,7 @@
 
 .Nav_footer {
     border-top: 1px solid #c06c84;
-    margin-bottom: 10px;
+    padding: 16px;
 }
 
 
@@ -15,7 +15,7 @@
     margin-top: 10px;
     padding: 16px 24px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     background-color: #fff;
     margin: 0 4px;
@@ -32,7 +32,7 @@
     margin-top: 10px;
     padding: 16px 24px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 20px;
     border: 1px solid;
     background-color: #c06c84;
     color: #fff;

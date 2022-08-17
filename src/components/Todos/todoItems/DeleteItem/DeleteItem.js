@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { deleteTodoThunk } from '../../../../redux/thunk';
+import { deleteTodoThunk } from '../../../../redux/todoSlice';
 import './DeleteItem.css';
 // import TodoItem from '../TodoItem/TodoItem';
 

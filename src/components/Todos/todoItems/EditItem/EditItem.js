@@ -1,15 +1,13 @@
-import moment from 'moment'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { edit } from '../../../../redux/actions';
-import { editTodoThunk } from '../../../../redux/thunk';
-import './EditItem.css'
+import { editTodoThunk } from '../../../../redux/todoSlice';
+import './EditItem.css';
 
 const EditItem = ({closeEdit, TodoItem}) => {
 
   const dispatch = useDispatch();
 
-  const todoList = useSelector(e => e.todoList)
+  const todoList = useSelector(e => e.todos)
 
   const[newValue, setNewValue] = useState(TodoItem.title)
 
@@ -19,22 +17,16 @@ const EditItem = ({closeEdit, TodoItem}) => {
 
   const [text, setText] = useState(false)
 
-  // console.log(newTime)
-
-
   const ChangeOldValue = (e) => {
-    
       setNewValue(e.target.value)
-      // console.log(e.target.value)
-    
   }
 
   const ChangeOldTime = (e) => {
     setNewTime(e.target.value)
-    // console.log(e.target.value)
   }
 
   const submitNewValue = () => {
+    // eslint-disable-next-line no-mixed-operators
     if(newValue !== '' && newValue.trim() !== '' && newTime !== todoList.deadLine || todoList.every(todo => todo.title !== newValue)) {
       dispatch(editTodoThunk({
         id : TodoItem.id,
@@ -52,12 +44,8 @@ const EditItem = ({closeEdit, TodoItem}) => {
       setText(true)
       
     }
-    // console.log(newValue)
   }
 
-  
-
-  // console.log(TodoItem)
   return (
     <div className='Edit'>
         <div className='Edit_content'>

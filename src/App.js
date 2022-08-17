@@ -1,20 +1,26 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
-import Header from "./components/header/Header";
+import Header from './components/Header/Header';
 import TodoList from "./components/Todos/todoItems/TodoList/TodoList";
-// import TodoItem from './components/Todos/todoItems/todoItem';
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { toast } from "react-toastify";
+import { getTodoThunk } from "./redux/todoSlice";
+import { useDispatch } from "react-redux";
+
 
 
 
 function App() {
-  const todos = useSelector((state) => state.todoList);
+  const dispatch = useDispatch();
+
+  const todos = useSelector((state) => state.todos);
   const [filterState, setFilterState] = React.useState("All");
-  // console.log(filterState)
+  
+  useEffect(() => {
+    dispatch(getTodoThunk(todos))
+  },[])
   return (
     // tat ca cac thanh phan con deu co the ket noi den store
     <div className="App">
