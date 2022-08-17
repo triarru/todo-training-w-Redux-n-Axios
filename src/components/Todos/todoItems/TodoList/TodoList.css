@@ -1,0 +1,14 @@
+.Todolist_content {
+    overflow: auto;
+    height: 623px;
+    padding: 16px;
+    /* background: linear-gradient(180deg,#c06c84,#6c5b7b,#355c7d) no-repeat; */
+    background-color: #f8edf0;
+    /* width: 700px; */
+}
+
+.Todolist_content::-webkit-scrollbar {
+    width: 0px;
+    /* background-color: #fff; */
+}
+

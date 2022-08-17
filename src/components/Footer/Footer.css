@@ -1,0 +1,40 @@
+.Footer_content {
+    /* position: absolute;
+    bottom: 14%; */
+    /* color: #c06c84; */
+}
+
+.Nav_footer {
+    border-top: 1px solid #c06c84;
+    padding: 16px;
+}
+
+
+
+.Footer_content .btn {
+    margin-top: 10px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+    background-color: #fff;
+    margin: 0 4px;
+    color: #c06c84;
+
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.click_btn {
+    margin: 0 4px;
+    margin-top: 10px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid;
+    background-color: #c06c84;
+    color: #fff;
+}
+

@@ -1,11 +1,33 @@
 .App {
+  position: relative;
   text-align: center;
+  max-width: 700px;
+  margin: auto;
+  border: 1px solid #ccc;
+  margin-top: 40px;
+  min-height: 600px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 15px;
+  /* background: linear-gradient(180deg,#f05053,#e1eec3,#355c7d) no-repeat; */
+  /* background-color: #ddd; */
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Todos {
+  max-width: 500px;
+  margin: auto;
+  height: 380px;
+  background-color: #fff;
 }
+
+hr {
+  background-color: #000;
+  font-weight: 100;
+  width: 595px;
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -13,27 +35,3 @@
   }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}

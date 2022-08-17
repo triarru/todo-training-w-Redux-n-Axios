@@ -1,0 +1,96 @@
+.inputBackground{
+    background-color: rgba(200, 200, 200);
+    align-items: center;
+}
+.inputContainer {
+    position: absolute;
+    z-index: 2;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0px 0px 20px black;
+    padding: 24px;
+    top: 17%;
+    left: 19%;
+}
+
+.text_already_exists,
+.time_error,
+.text_error {
+    margin: 0;
+    text-align: left;
+    padding: 4px;
+    color: red;
+}
+
+.body {
+    margin: 24px;
+}
+
+/* h1 {
+    font-size: 20px;
+    font-weight: 500;
+} */
+
+.title_new_todo {
+    margin: 0;
+    /* padding-bottom: 10px; */
+}
+
+.new_todo {
+   padding: 16px;
+    font-size: 24px;
+    display: block;
+    border-radius: 8px;
+}
+
+.calendar {
+    font-size: 24px;
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 14px 4px;
+}
+
+.btnAdd {
+    background-color: #c06c84;
+    border: 1px solid #006600;
+    /* width: 150px; */
+    height: 50px;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 0 60px;
+    border-radius: 8px;
+    margin: 0 8px;
+}
+
+.btnCancel {
+    background-color: #ccc;
+    border-radius: 8px;
+    /* width: 150px; */
+    height: 50px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 0 44px;
+    margin: 0 8px;
+
+}
+
+.btnAdd:hover{
+    cursor: pointer;
+    background-color: #d08b9e;
+}
+
+.btnCancel:hover{
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+
+.calendar:hover {
+    cursor: pointer;
+
+}
+
+.new_todo::placeholder {
+    opacity: 0.3;
+}
